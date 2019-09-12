@@ -8,6 +8,11 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+   - name: Run composer
+    uses: nick-zh/composer-php@master
+    with:
+      action: 'update'
+      options: '-o
     - uses: actions/checkout@v1
     - name: Run a one-line script
       run: echo Hello, world!
