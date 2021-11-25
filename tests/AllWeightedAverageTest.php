@@ -3,8 +3,7 @@
 namespace InventoryCosts\Tests;
 
 use InventoryCosts\AllWeightedAverage;
-use Faker\Factory;
-use Faker\Provider\Base;
+use Poppy\Faker\Factory;
 use PHPUnit\Framework\TestCase;
 
 class AllWeightedAverageTest extends TestCase
@@ -26,8 +25,8 @@ class AllWeightedAverageTest extends TestCase
     {
         parent::setUp();
         $this->faker = Factory::create('zh_CN');
-        $this->goodsItem = ['name' => Base::randomAscii(), 'num' => random_int(1, 999999),
-            'price' => Base::randomFloat(4, 0)];
+        $this->goodsItem = ['name' => $this->faker->randomLetter(), 'num' => random_int(1, 999999),
+            'price' => $this->faker->randomFloat(4, 0)];
         $this->plan = new AllWeightedAverage();
     }
 
@@ -38,7 +37,7 @@ class AllWeightedAverageTest extends TestCase
      */
     public function testInvalidPrice()
     {
-        $this->plan->purchaseGoods(Base::randomAscii(), random_int(1, 999999), Base::randomAscii());
+        $this->plan->purchaseGoods($this->faker->randomLetter(), random_int(1, 999999), $this->faker->randomLetter());
     }
 
 }
