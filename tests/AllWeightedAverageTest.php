@@ -21,7 +21,7 @@ class AllWeightedAverageTest extends TestCase
      */
     protected $plan;
 
-    public function setUp()
+    public function setUp() :void
     {
         parent::setUp();
         $this->faker = Factory::create('zh_CN');
