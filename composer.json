@@ -27,6 +27,6 @@
     "poppy/faker": "^3.2"
   },
   "scripts": {
-    "test": "phpunit --testdox tests"
+    "test": "phpunit --coverage-text --testdox tests"
   }
 }
