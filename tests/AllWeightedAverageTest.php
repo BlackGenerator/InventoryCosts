@@ -37,7 +37,7 @@ class AllWeightedAverageTest extends TestCase
      */
     public function testInvalidPrice()
     {
-        $this->plan->purchaseGoods($this->faker->randomLetter(), random_int(1, 999999), $this->faker->randomLetter());
+        $this->plan->purchaseGoods($this->faker->randomLetter(), random_int(1, 999999), $this->faker->randomFloat(4, 0));
     }
 
 }
